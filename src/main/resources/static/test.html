@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-ui@2.15.14/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/element-ui@2.15.14/lib/index.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>测试页面</h1>
+        <el-button type="primary">测试按钮</el-button>
+        <el-input v-model="message" placeholder="输入内容"></el-input>
+        <p>消息: {{ message }}</p>
+        <div v-if="showUser">
+            <h2>用户信息</h2>
+            <p>用户名: {{ user.username }}</p>
+            <p>昵称: {{ user.nickname }}</p>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                showUser: true,
+                user: {
+                    username: 'testuser',
+                    nickname: '测试用户'
+                }
+            },
+            mounted() {
+                console.log('Vue mounted successfully');
+            }
+        });
+    </script>
+</body>
+</html>
